@@ -1,0 +1,86 @@
+:root {
+    --blue: #444AB3;
+    --violet: #8B47A6;
+    --dark-violet: #6E48BD;
+}
+
+.not-styled-link {
+    text-decoration: none;
+}
+
+#nav-bar {
+    padding: 0.3em 0;
+    width: 100%;
+    background-color: var(--blue);
+    box-shadow: inset 0px 0px 7.5px 0px var(--pink);
+    margin-bottom: 3em;
+}
+.nav-bar__title {
+    margin-bottom: 0;
+    text-align: center;
+    color: var(--dark-violet);
+    text-shadow: 1px 1px 2px #000;
+    font-size: 5rem;
+    transition: color 1.5s;
+}
+.nav-bar__title:hover {
+    color: var(--violet);
+}
+.nav-bar__title .not-styled-link {
+    color: inherit;
+}
+
+.abilities-container {
+    max-width: 1350px;
+}
+
+.ability {
+    margin-bottom: 3em;
+}
+.ability__img {
+    object-fit: cover;
+    display: block;
+    box-shadow: inset 0px 0px 55px 0px var(--blue);
+    height: 100%;
+    height: 19em;
+}
+
+.ability__title-block {
+    background-color: var(--blue);
+    padding: 3px 0;
+}
+
+.ability__title {
+    font-size: 2.1em;
+    color: var(--dark-violet);
+    text-shadow: 1px 1px 1px #000;
+    transition: color 1s;
+    text-align: center;
+    margin: 0;
+}
+
+.ability:hover .ability__title {
+    color: var(--violet);
+}
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    html {
+        font-size: 8px;
+    }
+    .ability__img {
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 1224px) {
+    html {
+        font-size: 16px;
+    }
+}
