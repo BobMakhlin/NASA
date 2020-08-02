@@ -1,3 +1,6 @@
+import { apiKey } from './constants.js';
+import loadJson from './loadingHelper.js'
+
 class AstronomyPicture {
     constructor(title, explanation, imageUrl, copyrightString) {
         this.title = title;
