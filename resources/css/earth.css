@@ -1,0 +1,25 @@
+
+.title-desc__h2 {
+    text-align: center;
+}
+
+.input-image {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-image__column {
+    text-align: center;
+}
+
+.error-status {
+    text-align: center;
+}
+
+.earth-image {
+    text-align: center;
+}
+
+.earth-image--img {
+
+}
