@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Earth</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!-- /Fonts -->
+
+    <link rel="stylesheet" href="resources/css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.min.css">
+    <link rel="stylesheet" href="resources/css/earth.css">
+    <link rel="stylesheet" href="resources/css/default.css">
+</head>
+<body>
+    <div class="title-desc">
+        <div class="container">
+            <h2 class="title-desc__h2">Снимки земли!</h2>
+        </div>
+    </div>
+
+    <div class="section input">
+        <div class="container">
+            <div class="row input-image">
+                <div class="three column input-image__column">
+                    <label for="lat">Широта</label>
+                    <input id="lat" type="text" class="input-lat" name="lat" placeholder="1.5">
+                </div>
+                <div class="three column input-image__column">
+                    <label for="lon">Долгота</label>
+                    <input id="lon" type="text" class="input-lon" name="lon" placeholder="100.75">
+                </div>
+                <div class="three column input-image__column">
+                    <label for="dim">Ширина и высота в градусах</label>
+                    <input id="dim" type="text" class="input-dim" name="dim" placeholder="0.025">
+                </div>
+                <div class="three column input-image__column">
+                    <label for="date-screen">Дата снимка</label>
+                    <input id="date-screen" type="date" class="input-date" >
+                </div>
+            </div>
+            <div class="row input-image">
+                <button class="get-image">Получить снимок</button>
+            </div>
+            <div class="row error-status"></div>
+        </div>
+    </div>
+
+    <div class="section screen">
+        <div class="earth-image">
+            <img class="earth-image--img">
+        </div>
+    </div>
+
+    <script src="resources/js/earth.js"></script>
+</body>
+</html>
