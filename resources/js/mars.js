@@ -1,6 +1,3 @@
-import loadJson from "./loadingHelper.js"
-import {apiKey} from "./constants.js"
-
 let arrayImg = [];
 let count = 0;
 
