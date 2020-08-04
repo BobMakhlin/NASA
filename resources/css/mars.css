@@ -1,0 +1,13 @@
+
+.title-desc__h2,
+.input-image,
+.mars-change,
+.error-status,
+.mars-image
+{
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
