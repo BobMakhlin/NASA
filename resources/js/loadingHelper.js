@@ -15,5 +15,3 @@ async function loadJson(url) {
 
     return response.json();
 }
-
-export default loadJson;
