@@ -11,7 +11,10 @@
     margin: 0 auto;
 }
 
-.astro-picture-block__img {
+.astro-picture-block iframe {
+    height: 244px;
+}
+.astro-picture-block__resource {
     width: 100%;
     display: block;
 }

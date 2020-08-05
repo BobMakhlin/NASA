@@ -1,8 +1,9 @@
 class AstronomyPicture {
-    constructor(title, explanation, imageUrl, copyrightString) {
+    constructor(title, explanation, resourceType, resourceUrl, copyrightString) {
         this.title = title;
         this.explanation = explanation;
-        this.imageUrl = imageUrl;
+        this.resourceType = resourceType;
+        this.resourceUrl = resourceUrl;
         this.copyrightString = copyrightString;
     }
 
@@ -10,13 +11,23 @@ class AstronomyPicture {
         let pictureBlock = document.createElement('div');
         pictureBlock.className = 'astro-picture-block offset-by-four four columns';
 
-        pictureBlock.innerHTML = `
-            <img class="astro-picture-block__img" src=${this.imageUrl}>
+        switch (this.resourceType) {
+            case 'photo':
+                pictureBlock.innerHTML = `<img class="astro-picture-block__resource" src=${this.resourceUrl}>`;
+                break;
+            case 'video':
+                pictureBlock.innerHTML = `
+                    <iframe class="astro-picture-block__resource" src=${this.resourceUrl} allowfullscreen>
+                    </iframe>
+                `;
+                break;
+        }
+
+        pictureBlock.innerHTML += `
             <h2 class="title">${this.title}</h2>
             <p class="astro-picture-block__explanation">${this.explanation}</p>
             <p class="astro-picture-block__copyright">${this.copyrightString}</p>
         `;
-
 
         return pictureBlock;
     }
@@ -31,7 +42,8 @@ loadAstronomyPicture();
 
 async function loadAstronomyPicture() {
     let data = await loadJson(url);
-    let picture = new AstronomyPicture(data.title, data.explanation, data.url, data.copyright);
+    console.log(data)
+    let picture = new AstronomyPicture(data.title, data.explanation, data.media_type, data.url, data.copyright);
     let pictureDiv = picture.toHtmlElement();
     mainRow.append(pictureDiv);
 }
