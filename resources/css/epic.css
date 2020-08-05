@@ -1,0 +1,29 @@
+#main {
+    padding-bottom: 6em;
+}
+
+#main .title {
+    text-decoration: underline;
+}
+#main .container {
+    text-align: center;
+}
+
+.options-line {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+.option__label {
+    font-size: 1.3em;
+}
+.option__input {
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+
+.error {
+    color: #a70008;
+    font-size: 1.4em;
+    margin-top: 0.6em;
+    display: none;
+}

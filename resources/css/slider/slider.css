@@ -1,0 +1,38 @@
+.slider {
+    width: 32em;
+    height: 28em;
+    margin: 0 auto;
+}
+.slider__content {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 0.5em;
+
+    border: 1px solid #BBB;
+    border-radius: 3px;
+
+    position: relative;
+}
+.slider__item {
+    height: 100%;
+    object-fit: contain;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 0;
+
+    display: none;
+}
+.slider__item_active {
+    display: block;
+}
+
+.slider__buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.slider__left-button, .slider__right-button {
+    width: 49.5%;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!-- /Fonts -->
+
+    <link rel="stylesheet" href="resources/css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.min.css">
+
+    <link rel="stylesheet" href="resources/css/slider/slider.css">
+    <link rel="stylesheet" href="resources/css/epic.css">
+    <link rel="stylesheet" href="resources/css/default.css">
+</head>
+
+<body>
+    <div id="site-wrapper">
+        <div id="nav-bar">
+            <h1 class="nav-bar__title">
+                <a class="not-styled-link" href="/">NASA</a>
+            </h1>
+        </div>
+
+        <div id="main">
+            <div class="container">
+                <h2 class="title">Get the earth picture by date</h2>
+
+                <div class="options-line">
+                    <div class="option">
+                        <label class="option__label" for="picture-date">Date</label>
+                        <input class="option__input" id="picture-date" type="date">
+                    </div>
+                </div>
+                <button class="confirm-button">Confirm</button>
+
+                <p class="error"></p>
+
+                <div class="slider">
+                    <div class="slider__content"></div>
+
+                    <div class="slider__buttons">
+                        <button class="slider__left-button">&lt;</button>
+                        <button class="slider__right-button">&gt;</button>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <script src="resources/js/loadingHelper.js"></script>
+    <script src="resources/js/errors/not-found-error.js"></script>
+    <script src="resources/js/slider/slider.js"></script>
+
+    <script src="resources/js/epic.js"></script>
+</body>
+
+</html>
