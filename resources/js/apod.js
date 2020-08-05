@@ -6,29 +6,17 @@ class AstronomyPicture {
         this.copyrightString = copyrightString;
     }
 
-    toHtml() {
+    toHtmlElement() {
         let pictureBlock = document.createElement('div');
         pictureBlock.className = 'astro-picture-block offset-by-four four columns';
 
-        let image = document.createElement('img');
-        image.className = 'astro-picture-block__img';
-        image.src = this.imageUrl;
-        pictureBlock.append(image);
+        pictureBlock.innerHTML = `
+            <img class="astro-picture-block__img" src=${this.imageUrl}>
+            <h2 class="title">${this.title}</h2>
+            <p class="astro-picture-block__explanation">${this.explanation}</p>
+            <p class="astro-picture-block__copyright">${this.copyrightString}</p>
+        `;
 
-        let title = document.createElement('h2');
-        title.className = 'title';
-        title.innerText = this.title;
-        pictureBlock.append(title);
-
-        let explanation = document.createElement('p');
-        explanation.className = 'astro-picture-block__explanation';
-        explanation.innerText = this.explanation;
-        pictureBlock.append(explanation);
-
-        let copyright = document.createElement('p');
-        copyright.className = 'astro-picture-block__copyright';
-        copyright.innerText = '' + this.copyrightString;
-        pictureBlock.append(copyright);
 
         return pictureBlock;
     }
@@ -36,13 +24,14 @@ class AstronomyPicture {
 
 
 let mainRow = document.querySelector('#main .row');
-
-
 let url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
-loadJson(url)
-    .then(data => {
-        let picture = new AstronomyPicture(data.title, data.explanation, data.url, data.copyright);
-        let pictureDiv = picture.toHtml();
-        mainRow.append(pictureDiv);
-    });
+loadAstronomyPicture();
+
+
+async function loadAstronomyPicture() {
+    let data = await loadJson(url);
+    let picture = new AstronomyPicture(data.title, data.explanation, data.url, data.copyright);
+    let pictureDiv = picture.toHtmlElement();
+    mainRow.append(pictureDiv);
+}
